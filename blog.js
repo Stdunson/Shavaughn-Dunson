@@ -45,7 +45,7 @@ function renderPosts(posts) {
 	postList.replaceChildren(fragment);
 }
 
-fetch("blog/posts/posts.json")
+fetch(new URL("posts/posts.json", window.location.href))
 	.then((response) => {
 		if (!response.ok) {
 			throw new Error(`Could not load blog posts (${response.status}).`);
